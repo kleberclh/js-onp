@@ -11,11 +11,10 @@ const gerenciadorDeNotas = {
   },
 
   buscarNota: function (titulo) {
-    if (this.notas.find((nota) => nota.titulo === titulo)) {
-      return titulo;
-    } else {
-      return "Nenhum conteudo encontrado";
-    }
+    this.notas.find((nota) => nota.titulo.includes(titulo));
+  },
+  buscarNotas: function (titulo) {
+    return this.notas.filter((nota) => nota.titulo.includes(titulo));
   },
 };
 
